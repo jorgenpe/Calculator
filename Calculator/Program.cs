@@ -19,23 +19,27 @@ namespace Calculator
                     case 1:
                         { 
                             Add();
+                            Console.ReadKey();
                         break;
                         }
                         
                    case 2:
                         {
                             Sub();
-                        break;
+                            Console.ReadKey();
+                            break;
                         }
                     case 3:
                         {
                             Multi();
-                        break;
+                            Console.ReadKey();
+                            break;
                         }
                     case 4: 
                         {
                             Div();
-                        break;
+                            Console.ReadKey();
+                            break;
                         }
                     case 9:
                         {
@@ -53,7 +57,7 @@ namespace Calculator
             {
                 string count = "0";
 
-                Console.WriteLine("Choice what mathematical operation you want to preform.");
+                Console.WriteLine("Choice what mathematical operation you want to preform:");
                 Console.WriteLine("1. Addition.");
                 Console.WriteLine("2. Subtraction.");
                 Console.WriteLine("3. Multiplcation.");
@@ -67,14 +71,63 @@ namespace Calculator
 
             static void Add()
             {
+
+                Console.Clear();
+                Console.Write("Please state the first number: ");
+                double firstNum = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Please state the second number: ");
+                double secondNum =Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("The sum is: " + (firstNum + secondNum));
+                Console.WriteLine(" Stroke any key to return to menu.");
                 
             } 
 
-            static void Sub() { }
+            static void Sub() {
+                Console.Clear();
+                Console.Write("Please state the first number: ");
+                double firstNum = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Please state the second number: ");
+                double secondNum = Convert.ToDouble(Console.ReadLine());
 
-            static void Multi() { }
+                Console.WriteLine("The subtraction is: " + (firstNum - secondNum));
+                Console.WriteLine(" Stroke any key to return to menu.");
+            }
 
-            static void Div() { }    
+            static void Multi() {
+                Console.Clear();
+                Console.Write("Please state the first number: ");
+                double firstNum = Convert.ToDouble(Console.ReadLine());
+                
+                Console.Write("Please state the second number: ");
+                double secondNum = Convert.ToDouble(Console.ReadLine());
+                       
+                Console.WriteLine("The result of multiplication is: " + (firstNum * secondNum));
+                Console.WriteLine(" Stroke any key to return to menu.");
+            }
+
+            static void Div() {
+
+                Console.Clear();
+                Console.Write("Please state the numerator: ");
+                double firstNum = Convert.ToDouble(Console.ReadLine());
+
+                double secondNum = 0;
+
+                while (secondNum == 0)
+                {
+                    Console.Write("Please state the denominator: ");
+                    secondNum = Convert.ToDouble(Console.ReadLine());
+                    if (secondNum == 0)
+                    {
+                        Console.WriteLine("The denominator can not be zero");
+                    }
+
+                }
+
+                Console.WriteLine("The result of division is: " + (firstNum / secondNum));
+                Console.WriteLine(" Stroke any key to return to menu.");
+            }    
 
 
 
